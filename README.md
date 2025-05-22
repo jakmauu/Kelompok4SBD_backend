@@ -1,5 +1,5 @@
 # 📘 Assignment Tracker - Sistem Pengelolaan Tugas Akademik
-
+![Y6Bb2o.png](https://s6.imgcdn.dev/Y6Bb2o.png)
 Aplikasi web untuk memudahkan pengelolaan tugas antara pengajar (admin) dan mahasiswa. Admin bisa membuat dan menilai tugas, sedangkan mahasiswa bisa melihat, mengerjakan, dan mengumpulkan tugas secara langsung.
 
 ## 🚀 Fitur Utama
@@ -32,7 +32,7 @@ Aplikasi web untuk memudahkan pengelolaan tugas antara pengajar (admin) dan maha
 
 ### Infrastruktur
 - Docker + docker-compose
-- Vercel (opsional)
+
 
 ## ⚙️ Arsitektur
 
