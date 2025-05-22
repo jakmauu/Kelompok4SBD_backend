@@ -1,0 +1,255 @@
+/* Import font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Modern green color palette */
+  --green-primary: #10b981;
+  --green-secondary: #059669;
+  --green-accent: #34d399;
+  --green-light: #a7f3d0;
+  --green-ultralight: #d1fae5;
+  --green-dark: #047857;
+  --teal-accent: #14b8a6;
+  --emerald-light: #6ee7b7;
+  --lime-accent: #a3e635;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  height: -webkit-fill-available;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  line-height: 1.5;
+  color: #1F2937;
+  background-color: #F9FAFB;
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
+  width: 100%;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+/* Reset dasar dan font yang lebih proporsional */
+html, body, #root {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  font-size: 16px; /* Base font size yang lebih proporsional */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Menghilangkan scrollbar di sebelah kanan tetapi tetap bisa scroll */
+body::-webkit-scrollbar {
+  display: none; /* Safari and Chrome */
+}
+
+body {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+/* Layout fullscreen */
+.min-h-screen {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.flex-grow {
+  flex-grow: 1;
+}
+
+/* Container lebar penuh */
+.fullwidth-container {
+  width: 100%;
+  max-width: 100%;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+/* Font sizes yang lebih proporsional */
+.text-lg {
+  font-size: 1.125rem;
+}
+
+.text-xl {
+  font-size: 1.25rem;
+}
+
+.text-2xl {
+  font-size: 1.5rem;
+}
+
+.text-3xl {
+  font-size: 1.875rem;
+}
+
+/* Text dalam card lebih besar */
+.card-text {
+  font-size: 1.125rem;
+}
+
+.card-title {
+  font-size: 1.375rem;
+}
+
+/* Style dasar */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+/* Tab navigation full width */
+.full-width-tabs {
+  display: flex;
+  width: 100%;
+}
+
+.full-width-tabs > button {
+  flex-grow: 1;
+  text-align: center;
+  justify-content: center;
+}
+
+/* Futuristic green button gradient */
+.gradient-green-btn {
+  background: linear-gradient(135deg, #10b981, #059669);
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px -1px rgba(16, 185, 129, 0.2);
+}
+
+.gradient-green-btn:hover {
+  background: linear-gradient(135deg, #059669, #047857);
+  box-shadow: 0 10px 15px -3px rgba(16, 185, 129, 0.3);
+  transform: translateY(-2px);
+}
+
+/* Modern green text gradients */
+.green-text-gradient {
+  background: linear-gradient(90deg, #10b981, #059669);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+/* Better focus states for accessibility with green theme */
+:focus-visible {
+  outline: 2px solid #10b981;
+  outline-offset: 2px;
+}
+
+/* Loading spinner colors */
+.green-spinner {
+  border: 4px solid #d1fae5;
+  border-top: 4px solid #10b981;
+}
+
+/* Card hover effects */
+.green-card-hover:hover {
+  box-shadow: 0 8px 24px 0 rgba(16, 185, 129, 0.15);
+  transform: translateY(-4px);
+}
+
+/* Smooth animated background blobs */
+@keyframes floating-blob {
+  0% {
+    transform: translate(0px, 0px) scale(1);
+    opacity: 0.8;
+  }
+  33% {
+    transform: translate(30px, -50px) scale(1.1);
+    opacity: 0.6;
+  }
+  66% {
+    transform: translate(-20px, 20px) scale(0.9);
+    opacity: 0.7;
+  }
+  100% {
+    transform: translate(0px, 0px) scale(1);
+    opacity: 0.8;
+  }
+}
+
+.animate-blob {
+  animation: floating-blob 12s ease-in-out infinite;
+  filter: blur(40px);
+}
+
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+
+.animation-delay-4000 {
+  animation-delay: 4s;
+}
+
+.animation-delay-6000 {
+  animation-delay: 6s;
+}
+
+/* Input focus effect for improved UX */
+input:focus {
+  transition: all 0.2s ease;
+  transform: translateY(-1px);
+  box-shadow: 0 5px 15px -3px rgba(16, 185, 129, 0.15);
+}
+
+/* Glass effect for modern UI */
+.glass-effect {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Modern table styles */
+.modern-table th {
+  background: linear-gradient(to right, rgba(16, 185, 129, 0.05), transparent);
+  @apply text-emerald-700 font-medium py-3;
+}
+
+.modern-table tr:hover {
+  background-color: rgba(167, 243, 208, 0.1);
+}
+
+/* Responsive styles improved */
+@media (max-width: 640px) {
+  .responsive-grid {
+    grid-template-columns: 1fr !important;
+  }
+  
+  .responsive-padding {
+    padding: 1rem !important;
+  }
+  
+  .responsive-form-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+  }
+}
