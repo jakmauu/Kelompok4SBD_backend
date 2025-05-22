@@ -8,9 +8,11 @@ const PORT = process.env.PORT || 5000;
 
 // Middleware
 app.use(cors({
-  // Update CORS untuk mengizinkan frontend Vercel
+  // Update CORS untuk mengizinkan frontend Vercel dan Docker local
   origin: [
     'http://localhost:5173',
+    'http://localhost', // Tambahkan ini untuk frontend Docker
+    'http://localhost:80', // Alternatif explicit port
     'https://tutam9-frontend-gray.vercel.app',
     'https://tutam9-frontend-ls9rd37hx-dzakys-projects-91c39113.vercel.app'
   ],

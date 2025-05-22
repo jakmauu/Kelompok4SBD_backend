@@ -219,11 +219,18 @@ exports.updateAssignment = async (req, res) => {
 exports.deleteAssignment = async (req, res) => {
   try {
     const { id } = req.params;
-    const { userId } = req.body;
+    const { adminId } = req.query; // Ambil dari query parameter, bukan dari body
+
+    if (!adminId) {
+      return res.status(400).json({ message: 'Admin ID diperlukan sebagai query parameter' });
+    }
 
     // Validasi apakah pembuat adalah admin
-    const admin = await User.findById(userId);
-    if (!admin || admin.role !== 'admin') {
+    const admin = await User.findById(adminId);
+    if (!admin) {
+      return res.status(404).json({ message: 'User tidak ditemukan' });
+    }
+    if (admin.role !== 'admin') {
       return res.status(403).json({ message: 'Hanya admin yang dapat menghapus tugas' });
     }
 
@@ -531,6 +538,51 @@ exports.getAssignment = async (req, res, next) => {
   next();
 };
 
+// ...existing code...
+
+// Get specific submission details including files (admin only)
+exports.getSubmissionDetails = async (req, res) => {
+  try {
+    const { assignmentId, submissionId } = req.params;
+    const { adminId } = req.query;
+
+    if (!adminId) {
+      return res.status(400).json({ message: 'Admin ID diperlukan sebagai query parameter' });
+    }
+
+    // Validasi apakah pembuat adalah admin
+    const admin = await User.findById(adminId);
+    if (!admin || admin.role !== 'admin') {
+      return res.status(403).json({ message: 'Hanya admin yang dapat melihat detail submission' });
+    }
+
+    const assignment = await Assignment.findById(assignmentId)
+      .populate('submissions.user', 'username email');
+    
+    if (!assignment) {
+      return res.status(404).json({ message: 'Tugas tidak ditemukan' });
+    }
+
+    // Cari submission yang ingin dilihat
+    const submission = assignment.submissions.find(
+      sub => sub._id.toString() === submissionId
+    );
+
+    if (!submission) {
+      return res.status(404).json({ message: 'Submission tidak ditemukan' });
+    }
+
+    res.json({
+      submission,
+      assignmentTitle: assignment.title,
+      assignmentDescription: assignment.description,
+      deadline: assignment.deadline
+    });
+  } catch (err) {
+    console.error('Get submission details error:', err);
+    res.status(500).json({ message: 'Server error' });
+  }
+};
 // TAMBAHKAN: Get deadline assignments untuk user
 exports.getDeadlineAssignments = async (req, res) => {
   try {

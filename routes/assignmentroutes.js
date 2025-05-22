@@ -34,4 +34,7 @@ router.put('/:assignmentId/submissions/:submissionId/grade', assignmentControlle
 // Get all submissions for an assignment (admin only)
 router.get('/:id/submissions', assignmentController.getSubmissions);
 
+router.get('/:assignmentId/submissions/:submissionId', assignmentController.getSubmissionDetails);
+
+
 module.exports = router;
