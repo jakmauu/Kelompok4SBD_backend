@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+  backend:
+    build: ./backend
+    container_name: tutam-backend
+    restart: always
+    ports:
+      - "5000:5000"
+    environment:
+      - MONGODB_URI=mongodb+srv://jakmauu:E7H3vNWuMwpiNZc@praksbd.kpvs7lp.mongodb.net/?retryWrites=true&w=majority&appName=PrakSbd
+      - JWT_SECRET=assignment_tracker_secret_key
+      - CLOUDINARY_URL=cloudinary://287223595571212:28aTtNNcivjy8wlWKB9H-7HzFf8@dv8gbhmed
+    volumes:
+      - ./backend:/app
+      - /app/node_modules
+
+  frontend:
+    build: ./frontend
+    container_name: tutam-frontend
+    restart: always
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+    environment:
+      - VITE_API_URL=http://localhost:5000
+
+networks:
+  default:
+    name: tutam-network
