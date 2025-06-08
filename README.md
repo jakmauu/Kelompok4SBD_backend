@@ -1,16 +1,23 @@
-# 📘 Assignment Tracker - Sistem Pengelolaan Tugas Akademik
+
+# Assignment Tracker - Sistem Pengelolaan Tugas Akademik
 ![Y6Bb2o.png](https://s6.imgcdn.dev/Y6Bb2o.png)
 Aplikasi web untuk memudahkan pengelolaan tugas antara pengajar (admin) dan mahasiswa. Admin bisa membuat dan menilai tugas, sedangkan mahasiswa bisa melihat, mengerjakan, dan mengumpulkan tugas secara langsung.
+## Anggota Tim
 
-## 🚀 Fitur Utama
+- **Fido Wahyu Choirulinsan** – 2306250674  
+- **Ibnu Zaky Fauzi** – 2306161870  
+- **Muhammad Hilmy M** – 2306267006  
+- **Muhamad Dzaky Maulana** – 2306264401
+  
+## Fitur Utama
 
-### 👩‍🏫 Untuk Pengajar (Admin)
+### Untuk Pengajar (Admin)
 - Membuat & menugaskan tugas
 - Melihat statistik pengumpulan
 - Menilai tugas & memberi feedback
 - Kelola daftar mahasiswa
 
-### 👨‍🎓 Untuk Mahasiswa
+### Untuk Mahasiswa
 - Lihat daftar & deadline tugas
 - Upload tugas (teks / file)
 - Lihat nilai & feedback
@@ -34,13 +41,13 @@ Aplikasi web untuk memudahkan pengelolaan tugas antara pengajar (admin) dan maha
 - Docker + docker-compose
 
 
-## ⚙️ Arsitektur
+## Arsitektur
 
 - **RESTful API** backend (Express + MongoDB)
 - **SPA** frontend (React)
 - **Dockerized** (Frontend: NGINX, Backend: Node.js)
 
-## 🧪 Cara Menjalankan
+## Cara Menjalankan
 
 1. Clone repo ini
 2. Jalankan:
