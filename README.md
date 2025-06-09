@@ -2,6 +2,11 @@
 ![Y6Bb2o.png](https://s6.imgcdn.dev/Y6Bb2o.png)
 Aplikasi web untuk memudahkan pengelolaan tugas antara pengajar (admin) dan mahasiswa. Admin bisa membuat dan menilai tugas, sedangkan mahasiswa bisa melihat, mengerjakan, dan mengumpulkan tugas secara langsung.
 
+## Anggota Kelompok
+- Ibnu Zaky Fauzi (2306161870) - Teknik Komputer
+- Fido Wahyu Choirulinsan (2306250674) - Teknik Komputer
+- Muhamad Dzaky Maulana (2306264401) - Teknik Komputer
+- Muhammad Hilmy Mahardika (2306267006)-Teknik Komputer
 ## 🚀 Fitur Utama
 
 ### 👩‍🏫 Untuk Pengajar (Admin)
